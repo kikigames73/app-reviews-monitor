@@ -1,0 +1,17 @@
+{
+  "name": "app-reviews-monitor",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "App Store + Google Play reviews scraper with per-app insights and new-review monitoring",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/lib.test.js"
+  },
+  "dependencies": {
+    "apify": "^3.4.0",
+    "google-play-scraper": "^10.0.1"
+  },
+  "engines": { "node": ">=20" },
+  "license": "ISC"
+}
