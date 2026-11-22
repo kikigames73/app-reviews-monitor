@@ -1,0 +1,41 @@
+{
+  "actorSpecification": 1,
+  "name": "app-reviews-monitor",
+  "title": "App Store & Google Play Reviews Scraper + Insights",
+  "description": "Scrape app reviews from Apple App Store and Google Play in one run, get a per-app insight summary (rating trend by version, top complaint keywords) and monitor only NEW reviews on a schedule.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "reviews": {
+          "title": "Reviews",
+          "transformation": {
+            "fields": ["store", "appName", "country", "rating", "title", "text", "version", "date", "author", "thumbsUp", "replyText", "type"]
+          },
+          "display": {
+            "component": "table",
+            "properties": {
+              "store": { "label": "Store", "format": "text" },
+              "appName": { "label": "App", "format": "text" },
+              "country": { "label": "Country", "format": "text" },
+              "rating": { "label": "Rating", "format": "number" },
+              "title": { "label": "Title", "format": "text" },
+              "text": { "label": "Review", "format": "text" },
+              "version": { "label": "Version", "format": "text" },
+              "date": { "label": "Date", "format": "date" },
+              "author": { "label": "Author", "format": "text" },
+              "thumbsUp": { "label": "Helpful", "format": "number" },
+              "replyText": { "label": "Developer reply", "format": "text" },
+              "type": { "label": "Type", "format": "text" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
