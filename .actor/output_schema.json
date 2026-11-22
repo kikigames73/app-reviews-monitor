@@ -1,0 +1,16 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "App reviews and insights",
+  "properties": {
+    "reviews": {
+      "type": "string",
+      "title": "Reviews",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=reviews"
+    },
+    "all": {
+      "type": "string",
+      "title": "All items (reviews + summaries)",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}
